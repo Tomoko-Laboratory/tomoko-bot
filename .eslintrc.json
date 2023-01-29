@@ -1,0 +1,31 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "ignorePatterns": [".*", "*.json"],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "off",
+    "no-var": "error",
+    "no-return-await": "error",
+    "require-await": "error",
+    "no-shadow": "error",
+    "eqeqeq": ["error", "smart"],
+    "sort-vars": ["error", { "ignoreCase": true }],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "tabWidth": 2,
+        "ignoreUrls": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "yoda": "error"
+  }
+}

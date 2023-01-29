@@ -1,0 +1,24 @@
+{
+  "name": "tomoko-bot",
+  "version": "0.1.0",
+  "description": "just a private bot, created to manage my also private server",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node -r dotenv/config src/main.js",
+    "dev": "nodemon -r dotenv/config src/main.js",
+    "lint": "eslint . --ext .js --cache --cache-strategy content",
+    "format": "prettier . --write --ignore-unknown --cache --cache-strategy content"
+  },
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.3"
+  },
+  "author": "HarukaYamamoto0 <antonioalbert344@gmail.com>",
+  "license": "Apache-2.0"
+}
