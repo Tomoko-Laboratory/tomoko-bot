@@ -1,4 +1,4 @@
-import { Client, Options, Collection } from "discord.js";
+import { Client, Collection } from "discord.js";
 import botSettings from "./configs/bot.js";
 
 class Bot extends Client {
