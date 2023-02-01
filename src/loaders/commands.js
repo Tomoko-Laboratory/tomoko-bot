@@ -20,13 +20,13 @@ async function loadCommands(client) {
 
     for (const file of fileNames) {
       // checks if this command has been disabled.
-      const commandName = file.split(".")[0];
+      const commandName = file.split(".")[0].toLowerCase();
       if (disabledCommands.commands.includes(commandName)) continue;
 
       const { default: Command } = await import(pathToCommands.pathname + category + "/" + file);
       const command = new Command();
 
-      command.setName(commandName.toLowerCase());
+      command.setName(commandName);
       command.category = category;
 
       updateCommands.set(commandName, command);
