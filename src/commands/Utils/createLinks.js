@@ -1,4 +1,5 @@
 import BaseCommand from "../../structures/command.js";
+import { hyperlink } from "discord.js";
 
 class CreateLink extends BaseCommand {
   constructor() {
@@ -27,7 +28,7 @@ class CreateLink extends BaseCommand {
     });
 
     const content = {
-      content: `[${message}](${url})`,
+      content: hyperlink(message, url),
       threadId: interaction.channel.isThread() ? interaction.channelId : undefined,
     };
 
