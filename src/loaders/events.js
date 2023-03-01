@@ -22,11 +22,12 @@ async function loadEvents(client) {
       const eventName = fileName.split(".")[0];
       if (disabledEvents.events.includes(eventName)) continue;
 
-      const { default: event } = await import(pathToEvents.pathname + category + "/" + fileName);
+      const { default: Event } = await import(pathToEvents.pathname + category + "/" + fileName);
+      const event = new Event();
       numberOfEvents++;
 
-      const eventWithClient = event.bind(event, client);
-      if (category === "bot") client.on(eventName, eventWithClient);
+      const eventWithClient = event.run.bind(event, client);
+      if (category === "bot") client.on(event.eventType, eventWithClient);
       else if (category === "process") process.on(eventName, eventWithClient);
     }
   }
