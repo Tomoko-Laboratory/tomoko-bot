@@ -8,7 +8,14 @@
     "start": "node -r dotenv/config src/main.js",
     "dev": "nodemon -r dotenv/config src/main.js",
     "lint": "eslint . --ext .js --cache --cache-strategy content",
-    "format": "prettier . --write --ignore-unknown --cache --cache-strategy content"
+    "format": "prettier . --write --ignore-unknown --cache --cache-strategy content",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{js,json}": [
+      "prettier --write .",
+      "eslint ."
+    ]
   },
   "dependencies": {
     "discord.js": "^14.7.1",
@@ -16,6 +23,8 @@
   },
   "devDependencies": {
     "eslint": "^8.32.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.2",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.3"
   },
